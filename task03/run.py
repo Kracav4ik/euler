@@ -1,13 +1,12 @@
-#big_number = 13195
-#big_number = 18
-big_number = 6
+big_number = 600851475143 
 number = 2
 numbers = []
 while True:
-    if big_number % number == 0:
+    while big_number % number == 0:
         numbers.append(number)
-    number += 1
-    if number == big_number:
+        big_number /= number
+    number += 1        
+    if big_number == 1:
         break
 print numbers 
 
