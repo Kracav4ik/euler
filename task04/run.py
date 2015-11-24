@@ -1,5 +1,7 @@
-for x in range(10, 100):
-    for y in range(10, 100):
+palindromes = []
+for x in range(100, 1000):
+    for y in range(100, 1000):
         z = str(x * y)
         if z == z[::-1]:
-            print x * y
+            palindromes.append(x * y) 
+print max(palindromes)
