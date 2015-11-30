@@ -2,6 +2,8 @@ from math import sqrt
 
 
 def is_prime(xx):
+    """checks if the number is prime
+    """
     x2 = sqrt(xx)
     for p in primes:
         if xx % p == 0:
