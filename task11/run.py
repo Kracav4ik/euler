@@ -1,3 +1,4 @@
+#matrix 20x20 with product 4 all ways.
 matrix = [
     [ 8,  2, 22, 97, 38, 15,  0, 40,  0, 75,  4,  5,  7, 78, 52, 12, 50, 77, 91,  8],
     [49, 49, 99, 40, 17, 81, 18, 57, 60, 87, 17, 40, 98, 43, 69, 48,  4, 56, 62,  0],
@@ -20,3 +21,29 @@ matrix = [
     [20, 73, 35, 29, 78, 31, 90,  1, 74, 31, 49, 71, 48, 86, 81, 16, 23, 57,  5, 54],
     [ 1, 70, 54, 71, 83, 51, 54, 69, 16, 92, 33, 48, 61, 43, 52,  1, 89, 19, 67, 48],
 ]
+product = []
+for y in range(20):
+    for x in range(17):
+        z = 1
+        for i in range(4):
+            z *= matrix[y][x+i]
+        product.append(z)
+for y in range(17):
+    for x in range(20):
+        z = 1
+        for i in range(4):
+            z *= matrix[y+i][x]
+        product.append(z)
+for y in range(17):
+    for x in range(17):
+        z = 1
+        for i in range(4):
+            z *= matrix[y+i][x+i]
+        product.append(z)
+for y in range(17):
+    for x in range(3, 20):
+        z = 1
+        for i in range(4):
+            z *= matrix[y+i][x-i]
+        product.append(z)
+print max(product)
