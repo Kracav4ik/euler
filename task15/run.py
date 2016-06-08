@@ -13,4 +13,5 @@ def fac(n):
 def C_n_k(n, k):
     return fac(n) / (fac(k) * fac(n - k))
 
-print C_n_k(1, 5)
+
+print(sum(C_n_k(20, k)**2 for k in range(21)))
